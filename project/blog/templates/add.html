@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add details</title>
+</head>
+<body>
+    <header>
+        <div style="padding-left: 95%;">
+            <a href="/logout/">
+                <button>
+                    Logout
+                </button>
+            </a>
+        </div>
+    </header>
+    <br>
+    <h1> Add Student Details </h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <a href="/students/">
+        <button>
+            Home
+        </button>
+    </a>
+    <footer style="padding-left: 600px;padding-top:320px;">
+        @2024 - studentsdetails
+    </footer>
+</body>
+</html>

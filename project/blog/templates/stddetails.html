@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table,th,td{
+            border: 1px solid grey;
+            padding: 10px;
+        }
+        .table{
+            padding-left: 60%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="padding-left: 95%;">
+            <a href="/logout/">
+                <button>
+                    Logout
+                </button>
+            </a>
+        </div>
+    </header>
+    <br>
+ <u>   
+<h1>Students Details Modification</h1>
+</u>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Place</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for check in all_check %}
+        <tr>
+            <td>{{check.name}}</td>
+            <td>{{check.age}}</td>
+            <td>{{check.place}}</td>
+            <td>
+                <a href="{% url 'updatestd' check.id %}">
+                    <button>Edit</button>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'stddelete' check.id %}">
+                    <button>
+                        Delete
+                    </button>
+</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<a href="/students/add/">
+    <button>
+        Add+
+    </button>
+</a>
+<a href="/students/table/">
+    <button>
+        Table
+    </button>
+</a>
+<br>
+<br>
+<br>
+<br>
+<footer style="padding-left: 600px;padding-top:70px;">
+    @2024 - studentsdetails
+</footer>
+</body>
+</html>
